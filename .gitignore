@@ -1,0 +1,12 @@
+# Node modules
+.node_modules/
+
+# Environment variables
+.env
+
+# Service account keys
+server/config/serviceAccountKey.json
+backend/config/serviceAccountKey.json
+
+# Vercel configuration (if sensitive)
+.vercel/
