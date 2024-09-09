@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaSignInAlt, FaSignOutAlt, FaLock } from 'react-icons/fa';
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -8,6 +8,7 @@ import Spinner from '../components/Spinner';
 import { signInWithPopup, signOut as firebaseSignOut, sendPasswordResetEmail } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import { Link } from 'react-router-dom';
+
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
@@ -92,9 +93,9 @@ function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-100 to-blue-100">
-      <section className="max-w-md mx-auto bg-white p-8 shadow-lg rounded-lg">
-        <h1 className="text-4xl font-bold flex justify-center items-center space-x-2 mb-4 text-purple-700">
+    <div className="min-h-screen bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 flex justify-center items-center p-4 md:p-8 overflow-hidden">
+      <section className="w-full max-w-md bg-white p-6 md:p-8 shadow-lg rounded-lg">
+        <h1 className="text-4xl font-bold flex justify-center items-center space-x-2 mb-4 text-gray-800">
           {user ? (
             <>
               <FaSignOutAlt className="text-3xl" /> <span>Logout</span>
@@ -195,8 +196,8 @@ function Login() {
                   <p className="text-gray-600">
                     New User?{' '}
                     <Link to="/register" className="text-blue-500 hover:underline">
-  Register here
-</Link>
+                      Register here
+                    </Link>
                   </p>
                   <button
                     onClick={() => setIsResettingPassword(true)}

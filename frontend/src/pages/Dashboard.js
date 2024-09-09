@@ -142,10 +142,10 @@ function Dashboard() {
   }
 
   return (
-    <div className="flex flex-col p-4 space-y-4 bg-gradient-to-r from-purple-50 to-blue-50 min-h-screen">
-      <header className="flex flex-col mb-4 p-4 bg-white border border-gray-300 shadow-lg rounded-md">
-        <h1 className="text-3xl font-bold mb-4 text-purple-800">Task Management Dashboard</h1>
-        <div className="flex space-x-4 mb-4">
+    <div className="flex flex-col p-2 md:p-4 space-y-4 bg-gradient-to-r from-purple-50 to-blue-50 min-h-screen">
+      <header className="flex flex-col mb-4 p-2 md:p-4 bg-white border border-gray-300 shadow-lg rounded-md">
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-purple-800">Task Management Dashboard</h1>
+        <div className="flex flex-col space-y-2 mb-4 md:flex-row md:space-y-0 md:space-x-4">
           <input
             type="text"
             value={newTaskText}
@@ -173,7 +173,7 @@ function Dashboard() {
             {isAdding ? 'Adding...' : 'Add Task'}
           </button>
         </div>
-        <div className="flex space-x-4 mb-4">
+        <div className="flex flex-col space-y-2 mb-4 md:flex-row md:space-y-0 md:space-x-4">
           <input
             type="text"
             value={searchQuery}
@@ -193,7 +193,7 @@ function Dashboard() {
           </select>
         </div>
       </header>
-      <div className="flex space-x-4">
+      <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
         <DroppableColumn columnId="To Do" tasks={todoTasks} moveTask={moveTask} />
         <DroppableColumn columnId="In Progress" tasks={inProgressTasks} moveTask={moveTask} />
         <DroppableColumn columnId="Done" tasks={doneTasks} moveTask={moveTask} />
