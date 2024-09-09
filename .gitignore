@@ -10,3 +10,4 @@ backend/config/serviceAccountKey.json
 
 # Vercel configuration (if sensitive)
 .vercel/
+.vercel
